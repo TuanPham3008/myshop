@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia&family=Sofia+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/productDetails.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <script src="../assets/js/Data.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <!-- Top Header -->
+        <div class="top-header">
+            
+            <!-- No LogIn -->
+            <div id="noLogin" class="form-user">
+                <a id="registerLink" href="./iframe/register.html" target="" class="sign-up">Đăng ký</a>
+                <span class="separate">|</span>
+                <a href="./iframe/register.html" class="sign-in">Đăng Nhập</a>
+            </div>
+
+            <!-- LogIn -->
+            <div id="logIn" class="header__navbar-item header__navbar-user">
+                <img src="https://lh3.googleusercontent.com/a/AEdFTp4hgVYVO27pa9FB28Ku7jaSz9m1Ww2zKmZuZy52=s432-p-rw-no" alt="avt" class="header__navbar-user-img">
+                <span class="header__navbar-user-name">Tuấn Phạm</span>
+                <ul class="header__navbar-user-list">
+                    <li class="header__navbar-user-item">
+                        <a href="">Tài Khoản Của Tôi</a>
+                    </li>
+                    <li class="header__navbar-user-item">
+                        <a href="">Địa Chỉ Của Tôi</a>
+                    </li>
+                    <li class="header__navbar-user-item">
+                        <a href="">Đơn Mua</a>
+                    </li>
+                    <li class="header__navbar-user-item header__navbar-user-item--separate" onclick="handleLogOut()">
+                        <a>Đăng Xuất</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="list-support">
+                <div class="form-support">
+                    <div class="icon-support">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <a href="" class="link-support">betashop@sp.vn</a>
+                </div>
+                <div class="form-support">
+                    <div class="icon-support">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <a href="" class="link-support">1900 1311</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mid Header -->
+        <div class="mid-header" >
+            <div class="logo-header">
+                <a href="../index.html" class="logo-header__link">
+                    <img class="logo-header__img" src="../assets/img/logoshop.png" alt="">
+                </a>
+            </div>
+            <div class="search-header">
+                <div  class="form-search-header">
+                    <input type="text" class="search-header__input" placeholder="Nhập sản phẩm bạn muốn tìm...">
+
+                    <!-- Search History -->
+                    <div class="search-header__history">
+                        <h3 class="search-header__history-heading">Lịch Sử Tìm Kiếm</h3>
+                        <ul class="search-header__history-list">
+                            <li class="search-header__history-item">
+                                <a href="" class="">Điện thoại Iphone 14</a>
+                            </li>
+                            <li class="search-header__history-item">
+                                <a href="" class="">Điện thoại Iphone 14</a>
+                            </li>
+                            <li class="search-header__history-item">
+                                <a href="" class="">Điện thoại Iphone 14</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="search-header__icon" onclick="HandleSearchProduct(this)">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="cart-header">
+                <i class="cart-header__icon fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
+
+        <!-- Navbar Header -->
+        <div class="navbar-header">
+            <nav class="header-nav">
+                <ul class="header-nav__list">
+                    <li class="header-nav__item item-active">
+                        <a href="../index.html" target="_page" class="header-nav__link">Trang Chủ</a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a target="_page" class="header-nav__link">Giới Thiệu</a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a target="_page" class="header-nav__link">Iphone</a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a target="_page" class="header-nav__link">Oppo</a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a target="_page" class="header-nav__link">Vivo</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="wrap-product-details">
+        <div class="product-details" id="product-details"></div>
+    </div>
+    
+    <div class=" footer">
+        <div class="footer-wrap">
+            <div class="footer-menu">
+                <ul class="footer-menu__list">
+                    <li class="footer-menu__item">
+                        <a href="">Trang chủ</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href=""> Giới Thiệu</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="">Iphone</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="">Oppo</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="">Vivo</a>
+                    </li>
+                </ul>
+                <div class="footer-menu__social">
+                    <ul class="footer-menu__social-list">
+                        <li class="footer-menu__social-item">
+                            <a href="" class="footer-menu__social-link">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="footer-menu__social-item">
+                            <a href="" class="footer-menu__social-link">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="footer-menu__social-item">
+                            <a href="" class="footer-menu__social-link">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="footer-menu__social-item">
+                            <a href="" class="footer-menu__social-link">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-wrap__bottom">
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <div class="footer-copyright__made">
+                        <span>Made in</span>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="footer-copyright__fowered">
+                        <span>. Fowered by</span>
+                        <b>Beta Shop</b>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/Product.js"></script>
+    <script src="../assets/js/Home.js"></script>
+    
+
+</body>
+
+</html>

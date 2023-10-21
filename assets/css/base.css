@@ -1,0 +1,108 @@
+:root {
+    --primary-color: #FF4B2B;
+    --while-color: #ffff;
+    --text-color: #333;
+
+
+    /* Margin */
+    --margin-body: 0 20px; 
+
+    /* Width Height*/
+    --width-search: 570px;
+    --width-icon-search: 45px;
+    --height-classify: 34px;
+    --height-navbar: 46px;
+
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Sofia', cursive;
+    font-family: 'Sofia Sans', sans-serif;
+}
+
+.separate-product {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+/* Button Style */
+.btn {
+    min-width: 94px;
+    height: var(--height-classify);
+    background-color: var(--while-color);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: var(--height-classify);
+    border: none;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+
+}
+
+.btn:hover {
+    /* opacity: 0.9; */
+    cursor: pointer;
+}
+
+.btn.btn-active {
+    background-color: var(--primary-color);
+    color: var(--while-color);
+}
+
+.btn.btn-active .classify-link{
+    color: var(--while-color);
+}
+
+.btn.btn-size-l {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 12px;
+}
+
+.btn.btn-size-s {
+    min-width: 34px;
+}
+
+.btn.btn-form-register {
+    display: block;
+    min-width: 148px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 12px;  
+    transition: all 80ms ease-in;
+}
+
+.btn.btn-form-register:active {
+    transform: scale(0.95);
+}
+
+.btn.btn-size-l:hover .classify-link{
+    color: var(--while-color);
+}
+
+.btn.btn.btn-size-l:hover {
+    background-color: var(--primary-color);
+}
+
+/* Animetion */
+@keyframes leftoright {
+    from {
+        transform: translateX(-64px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}

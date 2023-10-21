@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia&family=Sofia+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="wrap-form__register">
+        <h2 class="form-title">Đăng ký/Đăng nhập</h2>
+        <div id="form-container" class="form-container">
+            <div class="form-content sign-up-content">
+                <form action="#" id="form-register" class="form-register">
+                        <h1 class="form-register__title">Đăng Ký Tài Khoản</h1>
+                        <span class="message-success"></span>
+                    <div class="form-wrap">
+                        <input class="form-register__input fullname" name="username" type="text"
+                            placeholder="Tên Tài Khoản" autocomplete="off">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-wrap">
+                        <input class="form-register__input email-signup" name="email" type="email" placeholder="Email"
+                            autocomplete="off">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-wrap">
+                        <input id="password" class="form-register__input pass-signup" name="password" type="password"
+                            placeholder="Mật Khẩu">
+                        <span class="form-message"></span>
+                    </div>
+                    <button id="signup-submit" class="btn btn-active btn-form-register" type="submit">Đăng Ký</button>
+                </form>
+            </div>
+            <div class="form-content sign-in-content">
+                <form action="#" id="form-signin" class="form-register">
+                    <h1 class="form-register__title">Đăng Nhập</h1>
+                    <span class="message-success"></span>
+                    <span class="message-warning"></span>
+                    <div class="form-wrap">
+                        <input class="form-signin__input username-signin" name="username" type="text" placeholder="Tên Tài Khoản" autocomplete="off">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-wrap">
+                        <input class="form-signin__input password-signin" name="password" type="password" placeholder="Mật Khẩu">
+                        <span class="form-message"></span>
+                    </div>
+                    <a href="" class="form-register__link">Quên mật khẩu?</a>
+                    <button class="btn btn-active btn-form-register" type="submit">Đăng Nhập</button>
+                </form>
+            </div>
+            <div class="overlay-content">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <h1 class="overlay-title">Chào Mừng Trở Lại!</h1>
+                        <p class="overlay-text">
+                            Để duy trì kết nối với chúng tôi vui lòng đăng nhập
+                            bằng thông tin cá nhân của bạn.
+                        </p>
+                        <button id="signIn" class="btn btn-form-register signin">Đăng Nhập</button>
+                    </div>
+                    <div class="overlay-panel overlay-left">
+                        <h1 class="overlay-title">Chào bạn!</h1>
+                        <p class="overlay-text">
+                            Nhập thông tin cá nhân của bạn và bắt đầu hành trình với chúng tôi.
+                        </p>
+                        <button id="signUp" class="btn btn-form-register signup" type="submit">Đăng Ký</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/Register.js"></script>
+
+    <script>
+        // Nhận Dữ Liệu Đã Nhập
+        // Lưu tại Local Storage
+        var formSignUp = new ValidateSignUp('#form-register');
+
+        formSignUp.onSubmit = (formData) => {
+            const username = document.querySelector('.fullname');
+
+            if(formData.username) {
+                var json = JSON.stringify(formData);
+                localStorage.setItem('userData', json);
+                console.log(formData);
+            }
+        }
+
+        // Sign In
+        var formSignIn = new SignIn("#form-signin");
+        
+        formSignIn.onSubmit = (SignInData) => {
+            console.log(SignInData);
+            console.log('test signin');
+        }
+    </script>
+</body>
+
+</html>
