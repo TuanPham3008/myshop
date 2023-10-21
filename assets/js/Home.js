@@ -8,14 +8,14 @@ var signinRedirect = document.querySelector('.sign-in');
 signupRedirect.addEventListener('click', (event) => {
     event.preventDefault();
     localStorage.setItem('isSignUp', true);
-    location.href = '/iframe/register.html'
+    location.href = './iframe/register.html'
 });
 
 // Panel Sign In
 signinRedirect.addEventListener('click', (event) => {
     event.preventDefault();
     localStorage.removeItem('isSignUp');
-    location.href = '/iframe/register.html'
+    location.href = './iframe/register.html'
 });
 
 
